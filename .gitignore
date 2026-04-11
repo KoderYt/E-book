@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Logs
+logs
+*.log
+
+# Environment variables
+.env
+
+# Mac system files
+.DS_Store
+
+# Build folders
+dist/
+build/
+
+# VS Code settings
+.vscode/
+
+# Python
+__pycache__/
+*.pyc
