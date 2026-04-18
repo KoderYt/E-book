@@ -4,5 +4,5 @@ const schema = new Schema({
 	
 },{timestamps: true})
 
-const AuthModel = model('Auth', schema)
-export default AuthModel
+const UserModel = model('User', schema)
+export default UserModel

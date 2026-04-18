@@ -8,18 +8,9 @@ const endpointSetup = (feature: string)=>{
     const serverFile = path.join(root, "src", "index.ts")
     const contents = readFileSync(serverFile, "utf-8")
     const arr = contents.split("\n")
-    const ui: string[] = []
-
-    for(let item of arr)
-    {   
-        ui.push(item)
-
-        if(item === "// Routes\r")
-            ui.push(`import ${name}Router from './${feature}/${feature}.routes'`)
-    }
-
-    ui.push(`app.use('/${feature}', ${name}Router)`)
-    writeFileSync(serverFile, ui.join("\n").toString())
+    arr.push(`\nimport ${name}Router from './${feature}/${feature}.routes'`)
+    arr.push(`app.use('/${feature}', ${name}Router)`)
+    writeFileSync(serverFile, arr.join("\n").toString())
     return true
 }
 
